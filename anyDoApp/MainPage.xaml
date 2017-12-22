@@ -14,7 +14,8 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Width="auto"
-                    Name="circleHolder">
+                    Name="circleHolder"
+                    >
             <Rectangle Width="100"
               StrokeThickness="10"
                  Height="5"
@@ -22,7 +23,8 @@
                    RadiusY="2"
                  Fill="{ThemeResource SystemControlForegroundAccentBrush}"
                  Name="myCircle"
-                 HorizontalAlignment="Center"/>
+                 HorizontalAlignment="Center"
+                       Margin="20,0,0,0"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"

@@ -45,7 +45,7 @@ namespace anyDoApp
             double radius = circleHolder.ActualWidth;
             PointCollection pointsToAnimateTo = getHexagonPoints(radius);
             
-            double pointAnimDuration = 100 / 60;
+            double pointAnimDuration = 7 / 6;
             int i = 2;
             
             while (true)
@@ -68,9 +68,13 @@ namespace anyDoApp
                         scaleSize = 1;
                     }
 
-                   await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
-                        .Rotate((float)getAngleInDegrees(i), duration:pointAnimDuration/ (500/300))
-                        .Scale(scaleSize, 1,(float)circleHolder.ActualWidth/2, (float)circleHolder.ActualHeight/2, duration:pointAnimDuration).StartAsync();
+                   //await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
+                   //     .Rotate((float)getAngleInDegrees(i), duration:pointAnimDuration/ (500/300))
+                   //     .Scale(scaleSize, 1,(float)circleHolder.ActualWidth/2, (float)circleHolder.ActualHeight/2, duration:pointAnimDuration).StartAsync();
+
+                    await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
+                       .Rotate((float)getAngleInDegrees(i), duration: pointAnimDuration / (500 / 300))
+                       .StartAsync();
                     i += 1;
                     
                     
@@ -102,10 +106,11 @@ namespace anyDoApp
 
         private async Task smoothHexAnimation(FrameworkElement element)
         {
-            double radius = element.ActualWidth;
+            double radius = element.ActualWidth / 4;
             PointCollection pointsToAnimateTo = getAllPointsSmoothly(radius);
 
-            double pointAnimDuration = 0.1/60;
+            
+            double pointAnimDuration = 1/60/60;
             int i = 20;
 
             while (true)
@@ -118,7 +123,7 @@ namespace anyDoApp
                     var offsetY = (float)point.Y;
 
                     
-                    var scaleSize = (float)i % 60;
+                    var scaleSize = (float)i % 10;
                     if (scaleSize == 0)
                     {
                         scaleSize = 1;
@@ -128,18 +133,36 @@ namespace anyDoApp
                     //     .Rotate((float)getIntervalAngleInDegrees(i%10), duration: pointAnimDuration / (500 / 300))
                     //     .Scale(scaleSize, 1, (float)circleHolder.ActualWidth / 2, (float)circleHolder.ActualHeight / 2, duration: pointAnimDuration).StartAsync();
 
-                    if (true)
+                    if (false)
                     {
                         await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
-                             .Rotate((float)getIntervalAngleInDegrees(i,60), duration: pointAnimDuration / (500 / 300))
+                             .Rotate((float)getIntervalAngleInDegrees(i), duration: pointAnimDuration / (500 / 300))
                               .Scale(scaleSize, 1, (float)circleHolder.ActualWidth / 2, (float)circleHolder.ActualHeight / 2, duration: pointAnimDuration).StartAsync();
 
                     }
+                    else if (true)
+                    {
+                        await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
+                             .Rotate((float)getIntervalAngleInDegrees(i,60),(float)circleHolder.ActualWidth/2,(float)circleHolder.ActualWidth/2, duration: pointAnimDuration).StartAsync();
+                    }
+
+                    else if (false)
+                    {
+                        await circleHolder.Rotate((float)getIntervalAngleInDegrees(i), duration: pointAnimDuration).StartAsync();
+                    }
+
+                    else if (false)
+                    {
+                        await circleHolder.Rotate((float)getIntervalAngleInDegrees(i,10), duration: pointAnimDuration)
+                            .Scale(scaleSize, 1, (float)circleHolder.ActualWidth / 2, (float)circleHolder.ActualHeight / 2, duration: pointAnimDuration)
+                            .StartAsync();
+                    }
                     else
                     {
-
                         await circleHolder.Offset(offSetX, offsetY, pointAnimDuration).StartAsync();
+
                     }
+
 
                     i += 1;
                 }
