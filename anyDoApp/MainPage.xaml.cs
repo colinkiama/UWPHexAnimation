@@ -105,8 +105,8 @@ namespace anyDoApp
             double radius = element.ActualWidth;
             PointCollection pointsToAnimateTo = getAllPointsSmoothly(radius);
 
-            double pointAnimDuration = 500 / 60;
-            int i = 2;
+            double pointAnimDuration = 0.1/60;
+            int i = 20;
 
             while (true)
             {
@@ -117,15 +117,30 @@ namespace anyDoApp
                     var offSetX = (float)point.X;
                     var offsetY = (float)point.Y;
 
-                    var scaleSize = (float)i % 8;
+                    
+                    var scaleSize = (float)i % 60;
                     if (scaleSize == 0)
                     {
                         scaleSize = 1;
                     }
 
-                    await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
-                         .Rotate((float)getIntervalAngleInDegrees(i/10), duration: pointAnimDuration / (500 / 300))
-                         .Scale(scaleSize, 1, (float)circleHolder.ActualWidth / 2, (float)circleHolder.ActualHeight / 2, duration: pointAnimDuration).StartAsync();
+                    //await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
+                    //     .Rotate((float)getIntervalAngleInDegrees(i%10), duration: pointAnimDuration / (500 / 300))
+                    //     .Scale(scaleSize, 1, (float)circleHolder.ActualWidth / 2, (float)circleHolder.ActualHeight / 2, duration: pointAnimDuration).StartAsync();
+
+                    if (true)
+                    {
+                        await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
+                             .Rotate((float)getIntervalAngleInDegrees(i,60), duration: pointAnimDuration / (500 / 300))
+                              .Scale(scaleSize, 1, (float)circleHolder.ActualWidth / 2, (float)circleHolder.ActualHeight / 2, duration: pointAnimDuration).StartAsync();
+
+                    }
+                    else
+                    {
+
+                        await circleHolder.Offset(offSetX, offsetY, pointAnimDuration).StartAsync();
+                    }
+
                     i += 1;
                 }
 
