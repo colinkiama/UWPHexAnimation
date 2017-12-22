@@ -22,9 +22,23 @@
                   RadiusX="2"
                    RadiusY="2"
                  Fill="{ThemeResource SystemControlForegroundAccentBrush}"
-                 Name="myCircle"
+                 Name="myRec"
                  HorizontalAlignment="Center"
                        Margin="20,0,0,0"/>
+
+            <Ellipse
+                Height="20"
+                Width="20"
+                Fill="{ThemeResource SystemControlForegroundAccentBrush}"/>
+            <Ellipse
+                Height="20"
+                Width="20"
+                Fill="{ThemeResource SystemControlForegroundAccentBrush}"/>
+            <Ellipse
+                Height="20"
+                Width="20"
+                Fill="{ThemeResource SystemControlForegroundAccentBrush}"/>
+            
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"

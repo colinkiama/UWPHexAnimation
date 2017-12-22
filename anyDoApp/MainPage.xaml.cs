@@ -142,8 +142,17 @@ namespace anyDoApp
                     }
                     else if (true)
                     {
-                        await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
-                             .Rotate((float)getIntervalAngleInDegrees(i,60),(float)circleHolder.ActualWidth/2,(float)circleHolder.ActualWidth/2, duration: pointAnimDuration).StartAsync();
+                        //await circleHolder.Offset(offSetX, offsetY, pointAnimDuration)
+                        //     .Rotate((float)getIntervalAngleInDegrees(i,60),(float)circleHolder.ActualWidth/2,(float)circleHolder.ActualWidth/2, duration: pointAnimDuration).StartAsync();
+
+                        foreach (var item in circleHolder.Children)
+                        {
+                            if (item is Ellipse)
+                            {
+                                await item.Offset(offSetX, offsetY, pointAnimDuration)
+                                      .Rotate((float)getIntervalAngleInDegrees(i),(float)circleHolder.ActualWidth/2,(float)circleHolder.ActualWidth/2, duration: pointAnimDuration).StartAsync();
+                            }
+                        }
                     }
 
                     else if (false)
