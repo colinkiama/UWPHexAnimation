@@ -7,7 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          RequestedTheme="Dark">
 
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="auto"
+                    Name="circleHolder">
+            <Rectangle Width="100"
+              StrokeThickness="10"
+                 Height="5"
+                  RadiusX="2"
+                   RadiusY="2"
+                 Fill="{ThemeResource SystemControlForegroundAccentBrush}"
+                 Name="myCircle"
+                 HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom">
+            <Button HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Content="Move"
+                Margin="20"
+                Click="Button_Click"/>
+            <Button HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Content="Move Smooooth"
+                Margin="20"
+                Name="smoothButton"
+                    Click="smoothButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
