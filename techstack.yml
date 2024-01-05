@@ -1,7 +1,8 @@
 repo_name: colinkiama/UWPHexAnimation
 report_id: fba329a79acf4b7908630bdc85a6de28
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-12T07:12:36+00:00'
+timestamp: '2024-01-05T08:49:43+00:00'
 requested_by: colinkiama
 provider: github
 branch: master
@@ -16,6 +17,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1015/1200px-C_Sharp_wordmark.svg.png
+  detection_source_url: https://github.com/colinkiama/UWPHexAnimation
   detection_source: Repo Metadata
 - name: Git
   description: Fast, scalable, distributed revision control system
@@ -25,6 +27,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/colinkiama/UWPHexAnimation
   detection_source: Repo Metadata
 - name: Visual Studio
   description: State-of-the-art tools and services that you can use to create great
@@ -35,6 +38,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Integrated Development Environment
   image_url: https://img.stackshare.io/service/1451/SR2hUhQN.png
+  detection_source_url: https://github.com/colinkiama/UWPHexAnimation/blob/master/anyDoApp.sln
   detection_source: anyDoApp.sln
   last_updated_by: Colin Kiama
   last_updated_on: 2017-12-22 05:32:06.000000000 Z
